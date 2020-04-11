@@ -9,7 +9,7 @@ class DateFormatter {
     fun toTextDay(day: String, month: String, year: String): String {
         var textMonth = if (month.length == 1) "0$month" else month
         try {
-            return LocalDate.parse("$year-$textMonth-$day").format(DateTimeFormatter.ofPattern("dd MMMM, EEEE"))
+            return LocalDate.parse("$year-$textMonth-$day").format(DateTimeFormatter.ofPattern("dd MMMM, EEEE")).withLocale(Locale("RU"))
         }
         finally {
             return "Такого дня не существует"
